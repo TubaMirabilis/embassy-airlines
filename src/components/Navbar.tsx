@@ -37,6 +37,7 @@ export default function Navbar() {
         <a
           href="#"
           class="header-toggle d-lg-none"
+          aria-label={`${headerOpen() ? "close menu" : "navigation menu"}`}
           onclick={() => setHeaderOpen(!headerOpen())}
         >
           <span></span>
