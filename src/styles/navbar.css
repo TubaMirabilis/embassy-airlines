@@ -23,7 +23,7 @@
 .header nav {
   position: relative;
   background-color: var(--primary);
-  padding: 1.0625rem;
+  padding: 1.0625rem 10%;
 }
 
 .header-logo img {
