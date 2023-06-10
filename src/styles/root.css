@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,800&display=swap");
 :root {
   --primary: #02193b;
   --secondary: #818c9d;
   --white: #ffffff;
+  --font-sm: 0.875rem;
 }
 *,
 *::before,
@@ -16,8 +17,50 @@ body {
   min-height: 100vh;
   margin-inline: 10%;
   font-family: Montserrat, sans-serif;
+  font-weight: 300;
   color: var(--primary);
   background: var(--white);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body.noscroll {
+  overflow: hidden;
+}
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  background: linear-gradient(to right, limegreen, cyan);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+}
+
+button::before,
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+button:hover::before,
+.button:hover::before {
+  opacity: 1;
 }

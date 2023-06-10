@@ -1,12 +1,12 @@
-.header.open .header__toggle > span:first-child {
+.header.open .header-toggle > span:first-child {
   transform: rotate(45deg);
 }
 
-.header.open .header__toggle > span:nth-child(2) {
+.header.open .header-toggle > span:nth-child(2) {
   opacity: 0;
 }
 
-.header.open .header__toggle > span:last-child {
+.header.open .header-toggle > span:last-child {
   transform: rotate(-45deg);
 }
 
@@ -17,64 +17,67 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-image: linear-gradient(darkBlue, transparent);
+  background-image: linear-gradient(var(--primary), transparent);
 }
 
 .header nav {
   position: relative;
-  background-color: white;
-  padding-top: 1.0625rem;
-  padding-bottom: 1.0625rem;
+  background-color: var(--primary);
+  padding: 1.0625rem;
 }
 
-.header__logo img {
+.header-logo img {
   width: 8.8125rem;
-  height: 1.375rem;
+  height: 3rem;
 }
 
-.header__toggle > span {
+.header-toggle > span {
   display: block;
   width: 26px;
   height: 2px;
-  background-color: darkBlue;
+  background-color: var(--white);
   transition: all 300ms ease-in-out;
   transform-origin: 3px 1px;
 }
 
-.header__toggle > span:not(:last-child) {
+.header-toggle > span:not(:last-child) {
   margin-bottom: 5px;
 }
 
-.header__menu {
+.header-menu {
   position: absolute;
   width: calc(100% - 3rem);
   left: 50%;
   transform: translateX(-50%);
-  background: white;
+  background: var(--secondary);
   margin-top: 1.5rem;
   padding: 1.625rem;
   border-radius: 5px;
 }
 
-.header__menu a {
+.header-menu a {
   display: block;
-  color: var(--primary);
+  color: var(--white);
   padding: 0.625rem;
   text-align: center;
 }
 
-.header__links a {
+.header-links {
+  display: none;
+}
+
+.header-links a {
   position: relative;
   font-size: var(--font-sm);
-  color: var(--primary);
+  color: var(--white);
   transition: color 300ms ease-in-out;
 }
 
-.header__links a:not(:last-child) {
+.header-links a:not(:last-child) {
   margin-right: 32px;
 }
 
-.header__links a::before {
+.header-links a::before {
   content: "";
   display: block;
   position: absolute;
@@ -87,10 +90,18 @@
   transition: opacity 300ms ease-in-out;
 }
 
-.header__links a:hover {
+.header-links a:hover {
   color: var(--secondary);
 }
 
-.header__links a:hover::before {
+.header-links a:hover::before {
   opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .header-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
 }
